@@ -26,6 +26,14 @@ export const typeDefs=`#graphql
         game(title:String): Game
         author(authorId:String): Author
     }
+    type Mutation {
+        deleteGame(id:ID!):[Game]
+        addGame(game: AddGameInput!):Game
+    }
+    input AddGameInput{
+        title:String!,
+        platform:[String!]!
+    }
 `
 
 /*
@@ -33,4 +41,8 @@ export const typeDefs=`#graphql
 
     ! review(id:ID): Review .
     ? This id here is a query variable which can be used to get a single review from the database based on the ID.
+
+    * What is this input keyWord in the schema?
+
 */
+
